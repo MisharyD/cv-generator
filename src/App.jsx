@@ -1,13 +1,22 @@
 import { useState } from 'react'
-import './App.css'
+import InformationForm from "./components/information-form"
+import Cv from "./components/cv"
+import './styles/App.css'
+import './styles/reset.css'
 
 function App() {
-  console.log("test");
 
   return (
-    <>
-      
-    </>
+    <div className='main'>
+      <h1>CV Generator</h1>
+
+      <InformationForm>
+
+      </InformationForm>
+      <Cv>
+    
+      </Cv>
+    </div>
   )
 }
 
