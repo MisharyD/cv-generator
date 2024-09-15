@@ -8,7 +8,7 @@ export default function PersonalSection({personalInfo})
     const about = personalInfo ? personalInfo.about : "";
 
     return (
-        <div className="personalSection">
+        <div className="personal-section">
             <div>Name: {name}</div>
             <div>Location: {location}</div>
             <div>email: {email}</div>

@@ -14,19 +14,48 @@ function App() {
     about: ""
   });
 
-  function onChangePersonalInfoChnage(e)
+  //it is an array to allows for multiple education sections
+  const [educationInfo, setEducationInfo] = useState(new Array());
+
+  function handleChangePersonalInfo(newInfo)
   {
-    const key = e.target.name 
-    const value = e.target.value
-    setPersonalInfo({...personalInfo, [key] :value})
+    setPersonalInfo(prev => ({ ...prev, ...newInfo }))
+  }
+
+  function addEducationSection(newSection)
+  {
+    setEducationInfo(prev => [...prev, { id: Date.now(), ...newSection }]);
+  }
+
+  function deleteEducationSection(id)
+  {
+    setEducationInfo(prevState => prevState.filter(section => section.id !== id));
+  }
+
+  function ChangeEducationInfo(id, newInfo)
+  {
+    setEducationInfo(prevState =>
+      prevState.map(section => (section.id === id ? { ...section, ...newInfo } : section))
+    );
   }
 
   return (
     <>
       <h1 className='text-4xl '>CV Generator</h1>
       <div className='main'>
-        <InformationForm personalInfo = {personalInfo} onChangePersonalInfo={onChangePersonalInfoChnage} />
-        <Cv personalInfo = {personalInfo} />
+        <InformationForm 
+        //personal section
+        personalInfo = {personalInfo} onChangePersonalInfo={handleChangePersonalInfo}
+
+        //education section
+        educationInfo = {educationInfo} onChangeEducationInfo = {ChangeEducationInfo} 
+        deleteEducationInfo = {deleteEducationSection} addEducationSection = {addEducationSection} 
+
+        //
+        />
+
+        <Cv personalInfo = {personalInfo} 
+        educationInfo = {educationInfo} />
       </div>
     </>
   )

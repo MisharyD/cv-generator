@@ -6,13 +6,13 @@ import WorkExperienceSection from "./cv-components/work-experience-section"
 import SkillsSection from "./cv-components/skills-section"
 
 
-export default function Cv({personalInfo})
+export default function Cv({personalInfo, educationInfo})
 {
     return(
     <div className="cv">
         <PersonalSection personalInfo = {personalInfo} />
 
-        <EducationSection />
+        <EducationSection educationInfo = {educationInfo}  />
 
         <ProjectsSection />
 
