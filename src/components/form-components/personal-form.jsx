@@ -9,6 +9,7 @@ export default function PersonalForm({personalInfo, onChangePersonalInfo})
 
     return (
         <>
+            <h2>Personal Information</h2>
             <form className="personalForm flex flex-col ">
                 <input type ="text" name ="name" value = {name} onChange={(e) => onChangePersonalInfo({name:e.target.value}) }/>
                 <input type ="text" name ="location" value={location} onChange={(e) => onChangePersonalInfo({location:e.target.value}) }/>

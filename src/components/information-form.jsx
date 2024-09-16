@@ -9,7 +9,10 @@ export default function InformationForm({
     personalInfo, onChangePersonalInfo,
     
     //education section
-    educationInfo, onChangeEducationInfo, deleteEducationInfo, addEducationSection
+    educationInfo, onChangeEducationInfo, deleteEducationInfo, addEducationSection,
+
+    //project section
+    projectInfo, onChangeProjectInfo, deleteProjectInfo, addProjectSection
 })
 {
     return(
@@ -23,7 +26,12 @@ export default function InformationForm({
                 addEducationSection={addEducationSection} 
             />
 
-            <ProjectsForm />
+            <ProjectsForm
+                projectInfo={projectInfo} 
+                onChangeProjectInfo={onChangeProjectInfo} 
+                deleteProjectInfo={deleteProjectInfo} 
+                addProjectSection={addProjectSection} 
+            />
 
             <WorkExperienceForm />
 

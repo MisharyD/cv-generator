@@ -9,6 +9,7 @@ export default function PersonalSection({personalInfo})
 
     return (
         <div className="personal-section">
+            <h2>Personal Information:</h2>
             <div>Name: {name}</div>
             <div>Location: {location}</div>
             <div>email: {email}</div>
