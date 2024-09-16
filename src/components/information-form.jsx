@@ -12,7 +12,13 @@ export default function InformationForm({
     educationInfo, onChangeEducationInfo, deleteEducationInfo, addEducationSection,
 
     //project section
-    projectInfo, onChangeProjectInfo, deleteProjectInfo, addProjectSection
+    projectInfo, onChangeProjectInfo, deleteProjectInfo, addProjectSection,
+
+    //work experience section
+    workExperienceInfo, onChangeWorkExperienceInfo, deleteWorkExperienceInfo, addWorkExperienceSection,
+
+    //skills section
+    skillsInfo, onChangeSkillsInfo, deleteSkillsInfo, addSkillsSection
 })
 {
     return(
@@ -33,9 +39,19 @@ export default function InformationForm({
                 addProjectSection={addProjectSection} 
             />
 
-            <WorkExperienceForm />
+            <WorkExperienceForm
+                workExperienceInfo={workExperienceInfo} 
+                onChangeWorkExperienceInfo={onChangeWorkExperienceInfo} 
+                deleteWorkExperienceInfo={deleteWorkExperienceInfo} 
+                addWorkExperienceSection={addWorkExperienceSection} 
+            />
 
-            <SkillsForm />
+            <SkillsForm
+                skillsInfo={skillsInfo} 
+                onChangeSkillsInfo={onChangeSkillsInfo} 
+                deleteSkillsInfo={deleteSkillsInfo} 
+                addSkillsSection={addSkillsSection} 
+            />
         </div>
     )
 }

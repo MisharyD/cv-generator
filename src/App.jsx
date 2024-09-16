@@ -14,10 +14,13 @@ function App() {
     about: ""
   });
 
-  //it is an array to allows for multiple education sections
   const [educationInfo, setEducationInfo] = useState(new Array());
 
   const [projectInfo, setProjectInfo] = useState(new Array());
+
+  const [workExperienceInfo, setWorkExperienceInfo] = useState(new Array());
+
+  const [skillsInfo, setSkillsInfo] = useState(new Array());
 
   const personalOperations = (function()
   {
@@ -74,6 +77,50 @@ function App() {
     return {addProjectSection, deleteProjectSection, changeProjectInfo}
   })()
 
+  const workExperienceOperations = (function()
+  {
+    function addWorkExperienceSection(newSection)
+    {
+      setWorkExperienceInfo(prev => [...prev, { id: Date.now(), ...newSection }]);
+    }
+
+    function deleteWorkExperienceSection(id)
+    {
+      setWorkExperienceInfo(prevState => prevState.filter(section => section.id !== id));
+    }
+
+    function changeWorkExperienceInfo(id, newInfo)
+    {
+      setWorkExperienceInfo(prevState =>
+        prevState.map(section => (section.id === id ? { ...section, ...newInfo } : section))
+      );
+    }
+
+    return {addWorkExperienceSection, deleteWorkExperienceSection, changeWorkExperienceInfo}
+  })()
+
+  const skillsOperations = (function()
+  {
+    function addSkillSection(newSection)
+    {
+      setSkillsInfo(prev => [...prev, { id: Date.now(), ...newSection }]);
+    }
+
+    function deleteSkillSection(id)
+    {
+      setSkillsInfo(prevState => prevState.filter(section => section.id !== id));
+    }
+
+    function changeSkillInfo(id, newInfo)
+    {
+      setSkillsInfo(prevState =>
+        prevState.map(section => (section.id === id ? { ...section, ...newInfo } : section))
+      );
+    }
+
+    return {addSkillSection, deleteSkillSection, changeSkillInfo}
+  })()
+
   return (
     <>
       <h1 className='text-4xl '>CV Generator</h1>
@@ -89,12 +136,24 @@ function App() {
         //project section
         projectInfo = {projectInfo} onChangeProjectInfo = {projectOperations.changeProjectInfo} 
         deleteProjectInfo = {projectOperations.deleteProjectSection} addProjectSection = {projectOperations.addProjectSection}
+
+        //work experience section
+        workExperienceInfo = {workExperienceInfo} 
+        onChangeWorkExperienceInfo = {workExperienceOperations.changeWorkExperienceInfo}
+        deleteWorkExperienceInfo = {workExperienceOperations.deleteWorkExperienceSection} 
+        addWorkExperienceSection = {workExperienceOperations.addWorkExperienceSection}
+
+        //skills section
+        skillsInfo = {skillsInfo} onChangeSkillsInfo = {skillsOperations.changeSkillInfo}
+        deleteSkillsInfo = {skillsOperations.deleteSkillSection} addSkillsSection = {skillsOperations.addSkillSection}
         />
 
         <Cv 
           personalInfo = {personalInfo} 
           educationInfo = {educationInfo}
           projectInfo = {projectInfo} 
+          workExperienceInfo = {workExperienceInfo} 
+          skillsInfo = {skillsInfo}
         />
       </div>
     </>
