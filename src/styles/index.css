@@ -2,17 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-#root
-{
-    height:100dvh;
+#root {
+  height: 100dvh;
 }
 
-body{
-    padding:12px 16px;
+body {
+  padding: 12px 16px;
 }
 
-.main
-{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
