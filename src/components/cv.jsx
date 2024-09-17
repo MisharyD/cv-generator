@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import PersonalSection from "./cv-components/personal-section";
 import EducationSection from "./cv-components/education-section";
 import ProjectsSection from "./cv-components/projects-section";
@@ -13,7 +12,8 @@ export default function Cv({
   skillsInfo,
 }) {
   return (
-    <div className="cv flex flex-col gap-8 bg-white">
+    <div className="cv flex flex-col gap-4 bg-white w-[700px] h-[900px] ml-[100px] p-[24px]
+    ">
       <PersonalSection personalInfo={personalInfo} />
 
       <EducationSection educationInfo={educationInfo} />

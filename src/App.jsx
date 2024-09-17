@@ -133,16 +133,19 @@ function App() {
           //personal section
           personalInfo={personalInfo}
           onChangePersonalInfo={personalOperations.handleChangePersonalInfo}
+          
           //education section
           educationInfo={educationInfo}
           onChangeEducationInfo={educationOperations.changeEducationInfo}
           deleteEducationInfo={educationOperations.deleteEducationSection}
           addEducationSection={educationOperations.addEducationSection}
+
           //project section
           projectInfo={projectInfo}
           onChangeProjectInfo={projectOperations.changeProjectInfo}
           deleteProjectInfo={projectOperations.deleteProjectSection}
           addProjectSection={projectOperations.addProjectSection}
+
           //work experience section
           workExperienceInfo={workExperienceInfo}
           onChangeWorkExperienceInfo={
@@ -154,6 +157,7 @@ function App() {
           addWorkExperienceSection={
             workExperienceOperations.addWorkExperienceSection
           }
+
           //skills section
           skillsInfo={skillsInfo}
           onChangeSkillsInfo={skillsOperations.changeSkillInfo}
