@@ -6,7 +6,7 @@ export default function PersonalForm({ personalInfo, onChangePersonalInfo }) {
   const about = personalInfo ? personalInfo.about : "";
 
   return (
-    <>
+    <div className="bg-white w-[80%] min-w-[400px] rounded-lg ml-[64px]">
       <h2>Personal Information</h2>
       <form className="personalForm flex flex-col max-w-[400px]">
         <input
@@ -46,6 +46,6 @@ export default function PersonalForm({ personalInfo, onChangePersonalInfo }) {
           onChange={(e) => onChangePersonalInfo({ about: e.target.value })}
         ></textarea>
       </form>
-    </>
+    </div>
   );
 }

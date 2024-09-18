@@ -5,7 +5,7 @@ export default function SkillsForm({
   addSkillsSection,
 }) {
   return (
-    <div>
+    <div className="bg-white w-[80%] min-w-[400px] rounded-lg ml-[64px]">
       <h2>Skills:</h2>
       <form className="skillsForm mb-4 flex flex-col">
         <input type="text" name="skillName" placeholder="Skill Name" />

@@ -34,7 +34,7 @@ export default function InformationForm({
   addSkillsSection,
 }) {
   return (
-    <div className="information-form">
+    <div className="information-form flex flex-col gap-[1rem]">
       <PersonalForm
         personalInfo={personalInfo}
         onChangePersonalInfo={onChangePersonalInfo}

@@ -5,7 +5,7 @@ export default function ProjectsForm({
   addProjectSection,
 }) {
   return (
-    <div>
+    <div className="bg-white w-[80%] min-w-[400px] rounded-lg ml-[64px]">
       <h2>Projects:</h2>
       <form className="projectForm mb-4 flex flex-col">
         <input type="text" name="name" placeholder="Project name" />

@@ -5,7 +5,7 @@ export default function WorkExperienceForm({
   addWorkExperienceSection,
 }) {
   return (
-    <div>
+    <div className="bg-white w-[80%] min-w-[400px] rounded-lg ml-[64px]">
       <h2>Work Experience:</h2>
       <form className="workExperienceForm mb-4 flex flex-col">
         <input type="text" name="organization" placeholder="Organization" />
