@@ -127,7 +127,13 @@ function App() {
 
   return (
     <>
-      <h1 className="text-4xl">CV Generator</h1>
+      <div className="flex justify-between">
+        <h1 className="text-4xl mb-10">CV Generator</h1>
+        <button className="p-4 px-4 text-[18px] bg-white rounded-lg w-min h-min flex gap-[0.5rem] items-center">
+          <div>Download</div>
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-6" viewBox="0 0 24 24"><path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" /></svg>
+        </button>
+      </div>
       <div className="main">
         <InformationForm
           //personal section

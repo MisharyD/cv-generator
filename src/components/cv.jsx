@@ -12,8 +12,7 @@ export default function Cv({
   skillsInfo,
 }) {
   return (
-    <div className="cv flex flex-col gap-4 bg-white w-[700px] h-[900px] ml-[100px] p-[24px]
-    ">
+    <div className="cv flex flex-col gap-4 bg-white w-[700px] h-[900px] ml-[100px] p-[24px] mr-[32px]">
       <PersonalSection personalInfo={personalInfo} />
 
       <EducationSection educationInfo={educationInfo} />

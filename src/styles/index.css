@@ -8,10 +8,17 @@
 
 body {
   padding: 12px 16px;
+  margin:0px;
   background-color:#EEF0F4;
 }
 
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+  margin:0px;
+  padding:0px;
 }
