@@ -1,88 +1,131 @@
+import { useState } from "react";
+
 export default function WorkExperienceForm({
   workExperienceInfo,
   onChangeWorkExperienceInfo,
   deleteWorkExperienceInfo,
   addWorkExperienceSection,
 }) {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
   return (
-    <div className="bg-white w-[80%] min-w-[400px] rounded-lg ml-[64px]">
-      <h2>Work Experience:</h2>
-      <form className="workExperienceForm mb-4 flex flex-col">
-        <input type="text" name="organization" placeholder="Organization" />
-        <input type="text" name="role" placeholder="Role" />
-        <input type="text" name="date" placeholder="Date" />
-        <textarea
-          name="description"
-          placeholder="Description"
-          className="mb-2"
-        />
-        <button
-          type="button"
-          onClick={(e) => {
-            const form = e.target.parentElement;
+    <div className="flex flex-col gap-4 bg-white w-[80%] min-w-[400px] rounded-lg ml-[64px] p-4 px-7">
+      <div
+        className="flex justify-between items-center bg-white cursor-pointer"
+        onClick={() => setIsFormOpen(!isFormOpen)}
+      >
+        <h2 className="text-[28px] font-semibold flex items-center m-[0px] p-0">
+          Work Experience
+        </h2>
+        <span>{isFormOpen ? "▲" : "▼"}</span>
+      </div>
+      {isFormOpen && (
+        <>
+          <form className="flex flex-col gap-2 bg-white m-[0px] border-[0px] border-b-[1px] border-solid">
+            <input
+              type="text"
+              name="organization"
+              placeholder="Orgnization"
+              className="border rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <input
+              type="text"
+              name="role"
+              placeholder="Role"
+              className="border rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <input
+              type="text"
+              name="date"
+              placeholder="Date"
+              className="border rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <textarea
+              name="description"
+              placeholder="Description"
+              className="border rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
 
-            const organization = form.querySelector(
-              "input[name='organization']",
-            ).value;
-            const role = form.querySelector("input[name='role']").value;
-            const date = form.querySelector("input[name='date']").value;
-            const description = form.querySelector("textarea").value;
+            <button
+              type="button"
+              onClick={(e) => {
+                const form = e.target.parentElement;
+                const organization = form.querySelector("input[name='organization']").value;
+                const role = form.querySelector("input[name='role']").value;
+                const date = form.querySelector("input[name='date']").value;
+                const description = form.querySelector("textarea").value;
 
-            addWorkExperienceSection({ organization, role, date, description });
-            form.reset();
-          }}
-        >
-          Add Work Experience Section
-        </button>
-      </form>
+                addWorkExperienceSection({
+                  organization: organization,
+                  role: role,
+                  date: date,
+                  description: description,
+                });
+                form.reset();
+              }}
+              className="my-4 bg-gray-100 cursor-pointer self-start p-2 rounded-lg"
+            >
+              Add Work Experience Section
+            </button>
+          </form>
 
-      <h3>Previous Work Experiences</h3>
-      {workExperienceInfo.map((section) => (
-        <div key={section.id} className="work-experience-item">
-          <input
-            type="text"
-            name="organization"
-            value={section.organization}
-            onChange={(e) =>
-              onChangeWorkExperienceInfo(section.id, {
-                organization: e.target.value,
-              })
-            }
-            placeholder="Organization"
-          />
-          <input
-            type="text"
-            name="role"
-            value={section.role}
-            onChange={(e) =>
-              onChangeWorkExperienceInfo(section.id, { role: e.target.value })
-            }
-            placeholder="Role"
-          />
-          <input
-            type="text"
-            name="date"
-            value={section.date}
-            onChange={(e) =>
-              onChangeWorkExperienceInfo(section.id, { date: e.target.value })
-            }
-            placeholder="Date"
-          />
-          <textarea
-            name="description"
-            value={section.description}
-            onChange={(e) =>
-              onChangeWorkExperienceInfo(section.id, {
-                description: e.target.value,
-              })
-            }
-            placeholder="Description"
-          />
-          <button onClick={() => deleteWorkExperienceInfo(section.id)}>
-            Delete
-          </button>
-        </div>
-      ))}
+          {workExperienceInfo.map((section) => (
+            <div
+              key={section.id}
+              className="mb-3 border-[0px] border-b-[1px] border-solid last:border-b-0"
+            >
+              <div className="flex flex-col justify-between gap-[1rem]">
+                <input
+                  type="text"
+                  className="p-1 border rounded"
+                  value={section.organization}
+                  onChange={(e) =>
+                    onChangeWorkExperienceInfo(section.id, {
+                      organization: e.target.value,
+                    })
+                  }
+                />
+                <input
+                  type="text"
+                  className="p-1 border rounded"
+                  value={section.role}
+                  onChange={(e) =>
+                    onChangeWorkExperienceInfo(section.id, {
+                      role: e.target.value,
+                    })
+                  }
+                />
+                <input
+                  type="text"
+                  className="p-1 border rounded"
+                  value={section.date}
+                  onChange={(e) =>
+                    onChangeWorkExperienceInfo(section.id, {
+                      date: e.target.value,
+                    })
+                  }
+                />
+                <input
+                  type="text"
+                  className="p-1 border rounded"
+                  value={section.description}
+                  onChange={(e) =>
+                    onChangeWorkExperienceInfo(section.id, {
+                      description: e.target.value,
+                    })
+                  }
+                />
+                <button
+                  className="text-red-500 cursor-pointer self-start p-2 rounded-lg mb-4"
+                  onClick={() => deleteWorkExperienceInfo(section.id)}
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          ))}
+        </>
+      )}
     </div>
   );
 }
