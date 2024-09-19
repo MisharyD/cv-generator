@@ -15,7 +15,7 @@ export default function WorkExperienceForm({
         onClick={() => setIsFormOpen(!isFormOpen)}
       >
         <div className="flex gap-[0.5rem]">
-          <img src="src/assets/images/work-experience.svg" className="w-[40px]" alt="" />
+          <img src="/images/work-experience.svg" className="w-[40px]" alt="" />
           <h2 className="text-[28px] font-semibold flex items-center m-[0px] p-0">
             Work Experience
           </h2>

@@ -44,7 +44,7 @@ function App() {
 
     function changeEducationInfo(id, newInfo) {
       setEducationInfo((prevState) =>
-        prevState.map((section) =>
+         prevState.map((section) =>
           section.id === id ? { ...section, ...newInfo } : section,
         ),
       );
@@ -159,7 +159,7 @@ function App() {
       <div className="flex justify-between">
         <div className="flex gap-[1rem] mb-10">
           <h1 className="text-4xl">CV Generator</h1>
-          <img src="src/assets/images/cv.png" className="w-[50px] self-center" alt=""/>
+          <img src="/images/cv.png" className="w-[50px] self-center" alt=""/>
         </div>
         <button className="p-4 px-4 text-[18px] bg-white rounded-lg w-min h-min flex gap-[0.5rem] items-center" onClick={downloadPdf}>
           <div>Download</div>

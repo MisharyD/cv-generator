@@ -15,7 +15,7 @@ export default function ProjectsForm({
         onClick={() => setIsFormOpen(!isFormOpen)}
       >
         <div className="flex gap-[0.5rem]">
-          <img src="src/assets/images/project.png" className="w-[40px]" alt="" />
+          <img src="/images/project.png" className="w-[40px]" alt="" />
           <h2 className="text-[28px] font-semibold flex items-center m-[0px] p-0">
             Projects
           </h2>

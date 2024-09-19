@@ -16,7 +16,7 @@ export default function PersonalForm({ personalInfo, onChangePersonalInfo }) {
         onClick={() => setIsFormOpen(!isFormOpen)}
       >
         <div className="flex items-center gap-[0.5rem]">
-          <img src="src/assets/images/personal-info.svg" className="w-[40px]" alt="" />
+          <img src="/images/personal-info.svg" className="w-[40px]" alt="" />
           <h2 className="text-[28px] font-semibold flex items-center m-[0px] p-0">
             Personal Information
           </h2>
