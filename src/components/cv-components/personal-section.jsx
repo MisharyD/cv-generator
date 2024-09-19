@@ -13,7 +13,7 @@ export default function PersonalSection({ personalInfo }) {
         <div className="whitespace-pre-wrap">{location !== "" && "|  "} {email}</div>
         <div className="whitespace-pre-wrap"> {email !== "" && "|  "} {phoneNumber}</div>
       </div>
-      <div className="mt-4 text-neutral-500 max-w-[400px]">{about}</div>
+      <div className="mt-4 text-neutral-500 max-w-[400px] whitespace-pre-wrap">{about}</div>
     </div>
   );
 }

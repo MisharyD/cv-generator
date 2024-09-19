@@ -3,6 +3,8 @@ import InformationForm from "./components/information-form";
 import Cv from "./components/cv";
 import "./styles/index.css";
 import "./styles/reset.css";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState({
@@ -125,11 +127,38 @@ function App() {
     return { addSkillSection, deleteSkillSection, changeSkillInfo };
   })();
 
+  const downloadPdf = () => 
+    {
+      const cvElement = document.querySelector(".cv");
+      html2canvas(cvElement).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF("p", "pt", "a4");
+
+      const imgWidth = 595.28;
+      const pageHeight = 841.89;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      let heightLeft = imgHeight;
+      let position = 0;
+
+      pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+
+      while (heightLeft >= 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+
+      pdf.save("cv.pdf");
+    });
+  };
+
   return (
     <>
       <div className="flex justify-between">
         <h1 className="text-4xl mb-10">CV Generator</h1>
-        <button className="p-4 px-4 text-[18px] bg-white rounded-lg w-min h-min flex gap-[0.5rem] items-center">
+        <button className="p-4 px-4 text-[18px] bg-white rounded-lg w-min h-min flex gap-[0.5rem] items-center" onClick={downloadPdf}>
           <div>Download</div>
           <svg xmlns="http://www.w3.org/2000/svg" className="w-6" viewBox="0 0 24 24"><path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" /></svg>
         </button>
