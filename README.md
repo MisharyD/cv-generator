@@ -1,5 +1,5 @@
 # CV-Generator
-![alt text](<Vite + React - Google Chrome 9_19_2024 5_54_19 PM.png>)
+![alt text](<Vite + React - Google Chrome 9_19_2024 6_38_51 PM.png>)
 ## Description
 Simple cv generator webapp devoloped using React.<br>
 Allow users to write personal information, education, projects, work-experience, skills.<br>
@@ -9,6 +9,6 @@ kept it simple by allowing users to structure their information in terms of spac
 This is to allow them to not write their info in one way.
 
 ### Some improvemnts that could be made
-- Allow to add custom sections with a title and description as elements of the section.<br>
+- Allow adding custom sections with a title and description as elements of the section.<br>
 - Allow reordering of sections<br>
-- allow style configurations in terms of font size, font color, etc. 
+- allow style configuration in terms of font size, font color, etc. 
