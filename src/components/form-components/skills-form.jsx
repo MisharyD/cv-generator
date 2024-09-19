@@ -14,9 +14,12 @@ export default function SkillsForm({
         className="flex justify-between items-center bg-white cursor-pointer"
         onClick={() => setIsFormOpen(!isFormOpen)}
       >
-        <h2 className="text-[28px] font-semibold flex items-center m-[0px] p-0">
-          Skills
-        </h2>
+        <div className="flex gap-[0.5rem]">
+          <img src="src/assets/images/skills.png" className="w-[40px] " alt="" />
+          <h2 className="text-[28px] font-semibold flex items-center m-[0px] p-0">
+            Skills
+          </h2>
+        </div>
         <span>{isFormOpen ? "▲" : "▼"}</span>
       </div>
       {isFormOpen && (

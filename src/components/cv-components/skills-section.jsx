@@ -8,7 +8,7 @@ export default function Skills({ skillsInfo }) {
       </h2>}
       {skillsInfo.map((section) => (
         <div key={section.id} className="education-item flex mb-[16px] last:mb-[0px]">
-         <div className="font-bold whitespace-pre-wrap">{section.skillName}</div>
+         <div className="font-bold whitespace-pre-wrap">{section.skill}</div>
           <div className="whitespace-pre-wrap">{section.description}</div>
         </div>
       ))}

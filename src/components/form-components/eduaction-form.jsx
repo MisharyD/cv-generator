@@ -15,9 +15,12 @@ export default function EducationForm({
         className="flex justify-between items-center bg-white cursor-pointer"
         onClick={() => setIsFormOpen(!isFormOpen)}
       >
-        <h2 className="text-[28px] font-semibold flex items-center m-[0px] p-0">
-          Education
-        </h2>
+        <div className="flex gap-[0.5rem]">
+          <img src="src/assets/images/education.svg" className="w-[40px]" alt="" />
+          <h2 className="text-[28px] font-semibold flex items-center m-[0px] p-0">
+            Education
+          </h2>
+        </div>
         <span>{isFormOpen ? "▲" : "▼"}</span>
       </div>
       {
@@ -69,12 +72,20 @@ export default function EducationForm({
           className= "mb-3 border-[0px] border-b-[1px] border-solid last:border-b-0 "
         >
           <div className="flex flex-col justify-between gap-[1rem]">
-            <input type= "text" className="p-1 border rounded w-[]" value={section.institution} 
-            onChange={(e) => onChangeEducationInfo({id:section.id, institution:section.institution})} />
-            <input type ="text" className="p-1 border rounded" value={section.date}
-            onChange={(e) => onChangeEducationInfo({id:section.id, date:section.date})}/>
-            <input type ="text" className="p-1 border rounded" value={section.description}
-            onChange={(e) => onChangeEducationInfo({id:section.id, description:section.description})}/>
+            <input 
+              type= "text" 
+              className="p-1 border rounded w-[]" 
+              value={section.institution} 
+              onChange={(e) => onChangeEducationInfo(section.id, { institution: e.target.value })} />
+            <input 
+              type ="text" 
+              className="p-1 border rounded" 
+              value={section.date}
+              onChange={(e) => onChangeEducationInfo(section.id, { date: e.target.value })}/>
+            <textarea 
+              className="p-1 border rounded" 
+              value={section.description}
+              onChange={(e) => onChangeEducationInfo(section.id, { description: e.target.value })}></textarea>
             <button
               className="text-red-500 cursor-pointer self-start p-2 rounded-lg mb-4"
               onClick={() => deleteEducationInfo(section.id)}

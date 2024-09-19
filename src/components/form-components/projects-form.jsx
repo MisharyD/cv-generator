@@ -14,9 +14,12 @@ export default function ProjectsForm({
         className="flex justify-between items-center bg-white cursor-pointer"
         onClick={() => setIsFormOpen(!isFormOpen)}
       >
-        <h2 className="text-[28px] font-semibold flex items-center m-[0px] p-0">
-          Projects
-        </h2>
+        <div className="flex gap-[0.5rem]">
+          <img src="src/assets/images/project.png" className="w-[40px]" alt="" />
+          <h2 className="text-[28px] font-semibold flex items-center m-[0px] p-0">
+            Projects
+          </h2>
+        </div>
         <span>{isFormOpen ? "▲" : "▼"}</span>
       </div>
       {isFormOpen && (
@@ -83,14 +86,13 @@ export default function ProjectsForm({
                     onChangeProjectInfo(section.id, { date: e.target.value })
                   }
                 />
-                <input
-                  type="text"
+                <textarea
                   className="p-1 border rounded"
                   value={section.description}
                   onChange={(e) =>
                     onChangeProjectInfo(section.id, { description: e.target.value })
                   }
-                />
+                ></textarea>
                 <button
                   className="text-red-500 cursor-pointer self-start p-2 rounded-lg mb-4"
                   onClick={() => deleteProjectInfo(section.id)}

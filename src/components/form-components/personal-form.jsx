@@ -15,9 +15,12 @@ export default function PersonalForm({ personalInfo, onChangePersonalInfo }) {
         className="flex justify-between items-center bg-white cursor-pointer"
         onClick={() => setIsFormOpen(!isFormOpen)}
       >
-        <h2 className="text-[28px] font-semibold flex items-center m-[0px] p-0">
-          Personal Information
-        </h2>
+        <div className="flex items-center gap-[0.5rem]">
+          <img src="src/assets/images/personal-info.svg" className="w-[40px]" alt="" />
+          <h2 className="text-[28px] font-semibold flex items-center m-[0px] p-0">
+            Personal Information
+          </h2>
+        </div>
         <span>{isFormOpen ? "▲" : "▼"}</span>
       </div>
 
