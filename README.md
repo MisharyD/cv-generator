@@ -4,7 +4,7 @@
 Simple cv generator webapp devoloped using React.<br>
 Allow users to write personal information, education, projects, work-experience, skills.<br>
 Allow users to edit their previusly written info<br>
-Allow users to download the cv as pdf
+Allow users to download the cv as pdf <br>
 kept it simple by allowing users to structure their information in terms of spaces in a textarea element. 
 This is to allow them to not write their info in one way.
 
